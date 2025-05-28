@@ -1,0 +1,33 @@
+<calclist> ::= /* vazio */
+             | <calclist> <stmt> EOL
+             | <calclist> let <NAME> ( <symlist> ) = <list> EOL
+             | <calclist> error EOL
+
+<stmt> ::== if <exp> then <list>
+         | if <exp> then <list> else <list>
+         | while <exp> do <list>
+         | <exp>
+         | for ( <exp> ; <exp> ; <exp> ) <list>
+
+<list> ::== /* vazio */
+         | <stmt> ; <list>
+
+<exp> ::== <exp> <CMP> <exp>
+        | <exp> + <exp>
+        | <exp> - <exp>
+        | <exp> * <exp>
+        | <exp> / <exp>
+        | ( <exp> )
+        | <NUMBER>
+        | <NAME>
+        | <NAME> = <exp>
+        | <FUNC> ( <explist> )
+        | <NAME> ( <explist> )
+        | <exp> and <exp>
+        | <exp> or <exp>
+
+<explist> ::== <exp>
+           | <exp> , <explist>
+
+<symlist> ::== <NAME>
+           | <NAME> , <symlist>
