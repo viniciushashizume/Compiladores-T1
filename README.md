@@ -1,0 +1,1 @@
+Este projeto implementa um analisador léxico e sintático para a Linguagem de Programação Básica, uma linguagem inspirada em uma calculadora avançada, porém estendida com estruturas de controle (FOR) e operadores lógicos (AND, OR). Construido utilizando as ferramentas flex e bison.
